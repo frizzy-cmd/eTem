@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>eTem Enterprise</title>
+
+    <meta name="language" content="EN">
+	<meta name="owner" content="nightregion">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#859a9d">
+
+    <meta property="og:type" content="website">
+	<meta property="og:site_name" content="eTem console">
+	<meta property="og:title" content="eTem">
+	<meta property="og:description" content="Console">
+	<meta property="og:url" content="https://etem.teaa.workers.dev/">
+	<meta property="og:image" content="https://etem.teaa.workers.dev/assets/tem.png">
+	<meta property="og:image:secure_url" content="https://etem.teaa.workers.dev/assets/tem.png">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:locale" content="en_US">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://etem.teaa.workers.dev/">
+	<meta name="twitter:title" content="eTem">
+	<meta name="twitter:description" content="Console">
+	<meta name="twitter:image" content="https://etem.teaa.workers.dev/assets/tem.png">
+    <link rel="icon" type="image/png" href="assets/tem.png">
+    <!-- tem -->
+    <style>
+        body {
+            background-color: #d4d0c8;
+            font-family: "MS Sans Serif", Tahoma, Verdana, sans-serif;
+            margin: 0;
+            padding: 10px;
+            font-size: 11px;
+            color: #000;
+        }
+
+        .main-table {
+            width: 820px;
+            margin: 0 auto;
+            border: 2px solid #ffffff;
+            border-right-color: #808080;
+            border-bottom-color: #808080;
+            background: #ece9d8;
+            padding: 2px;
+        }
+
+        .header-bg {
+            background: #000080;
+            color: white;
+            font-weight: bold;
+            padding: 4px 8px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .banner-cell {
+
+        }
+
+        .banner-wrap {
+            background-color: #ffffff;
+            border: 2px inset #808080;
+            padding: 15px;
+            box-sizing: border-box;
+            width: 100%;
+            display: flex; 
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .banner-img {
+            height: 110px;
+            width: auto;
+            display: block;
+        }
+
+
+
+        .icon-img {
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        .inset-box {
+            border: 2px inset #808080;
+            background: #ffffff;
+            padding: 8px;
+            margin-bottom: 8px;
+        }
+
+        .terminal-box {
+            background-color: #000000;
+            color: #00ff00;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 12px;
+            height: 160px;
+            overflow-y: scroll;
+            border: 2px inset #808080;
+            padding: 6px;
+            white-space: pre-wrap;
+        }
+
+        .btn {
+            background: #d4d0c8;
+            border: 2px solid #ffffff;
+            border-right-color: #404040;
+            border-bottom-color: #404040;
+            padding: 4px 12px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: "MS Sans Serif", Tahoma, sans-serif;
+            font-size: 11px;
+        }
+
+        .btn:active {
+            border: 2px solid #404040;
+            border-right-color: #ffffff;
+            border-bottom-color: #ffffff;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 18px;
+            border: 2px inset #808080;
+            background: #e0e0e0;
+            margin-top: 5px;
+        }
+
+        .progress-bar-fill {
+            width: 0%;
+            height: 100%;
+            background: #000080;
+        }
+
+        .status-bar {
+            border: 1px inset #808080;
+            padding: 2px 5px;
+            background: #d4d0c8;
+            margin-top: 10px;
+            font-size: 10px;
+            color: #404040;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 999;
+        }
+
+        .modal-win {
+            width: 450px;
+            margin: 100px auto;
+            background: #d4d0c8;
+            border: 2px solid #ffffff;
+            border-right-color: #000000;
+            border-bottom-color: #000000;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        textarea.key-area {
+            width: 95%;
+            height: 100px;
+            font-family: monospace;
+            font-size: 12px;
+            background: #ffffd0;
+            border: 2px inset #808080;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table class="main-table" cellspacing="0" cellpadding="0">
+        <tr>
+            <td colspan="2">
+                <div class="header-bg">
+                    <span><img src="assets/tem.png" class="icon-img" alt="eTem Icon"> eTem Console v2.1.0</span>
+                    <span>Made by <a href="https://github.com/frizzy-cmd" target="_blank">Nightregion</a></span>
+                </div>
+            </td>
+        </tr>
+                <tr>
+            <td class="banner-cell" colspan="2">
+                <div class="banner-wrap">
+                    <div>
+                        <img src="assets/tembanner.png" class="banner-img" alt="banner">
+                    </div>
+                    <div style="flex-grow: 1; min-width: 0;">
+                        <marquee style="color: red; font-weight: bold; font-size: 14px; margin: 0;" scrollamount="3">
+                            NOTICE: Do not turn off device during generation!
+                        </marquee>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td width="30%" valign="top" style="padding: 6px;">
+                <div class="inset-box">
+                    <b>Specifications</b><br><br>
+                    Algorithm: RSA<br>
+                    Key Size: 4096-bit<br>
+                    Entropy Source: Mouse/System<br>
+                    PKCS Standard: #1 v2.2<br>
+                    HSM Slot: 0x01 [Ready!]
+                </div>
+                <div class="inset-box">
+                    <b>Operation parameterss</b><br><br>
+                    <input type="checkbox" checked disabled> Precision<br>
+                    <input type="checkbox" checked disabled> Force safe primes<br>
+                    <input type="checkbox" disabled> Skip validation
+                </div>
+            </td>
+            <td width="70%" valign="top" style="padding: 6px;">
+                <div class="inset-box">
+                    <b>Output</b>
+                    <div id="termLog" class="terminal-box">-- eTem PKI console --</div>
+
+                    <div style="margin-top: 8px;">
+                        Progress: <span id="percentText">0%</span>
+                        <div class="progress-bar-bg">
+                            <div id="pFill" class="progress-bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 12px; text-align: right;">
+                        <button id="genBtn" class="btn" onclick="startGenProcess()">Generate RSA key</button>
+                        <button class="btn" onclick="clearConsole()">Clear</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="status-bar">
+                    Status: Idle | Module ID: 0x88F2A | Host: 127.0.67.1 | eTem PKI Core DLL v4.0.41 | This is a joke
+                    & not intended to deface eMudhra
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div id="keyModal" class="modal-overlay">
+        <div class="modal-win">
+            <div class="header-bg">
+                <span>Successfully generated key</span>
+                <span style="cursor:pointer;" onclick="closeKeyModal()">X</span>
+            </div>
+            <div style="padding: 12px;">
+                <p><b>NOTICE:</b> Copy AND SECUREY store the generated key below!! Do not share this key with
+                    unauthorized personnel</p>
+
+                <textarea id="keyArea" class="key-area" readonly>-----BEGIN RSA PRIVATE KEY-----
+4
+-----END RSA PRIVATE KEY-----</textarea>
+
+                <div style="margin-top: 10px; text-align: right;">
+                    <button class="btn" onclick="copyKeyToClipboard()">Copy</button>
+                    <button class="btn" onclick="downloadKeyFile()">Download</button>
+                    <button class="btn" onclick="closeKeyModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="thing.js"></script>
+</body>
+
+</html>
